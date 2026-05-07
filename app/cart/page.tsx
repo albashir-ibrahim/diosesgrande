@@ -71,8 +71,8 @@ export default function CartPage() {
                     <div key={item.id} className="flex gap-4 p-5">
                       {/* Image */}
                       <Link href={`/products/${item.product.id}`} className="w-24 h-24 bg-gray-50 rounded-xl overflow-hidden border border-gray-100 shrink-0 hover:opacity-80 transition">
-                        {item.product.images[0] ? (
-                          <img src={item.product.images[0]} alt={item.product.name} className="w-full h-full object-cover" />
+                        {(item.product.images as string[])[0] ? (
+                          <img src={(item.product.images as string[])[0]} alt={item.product.name} className="w-full h-full object-cover" />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center text-4xl">📦</div>
                         )}

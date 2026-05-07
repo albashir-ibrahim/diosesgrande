@@ -95,7 +95,7 @@ export default async function OrdersPage() {
                 <div className="flex -space-x-4 overflow-hidden shrink-0">
                   {order.orderItems.slice(0, 3).map((item, i) => (
                     <div key={item.id} className="w-16 h-16 rounded-xl border-2 border-white bg-gray-50 overflow-hidden shadow-sm">
-                      <img src={item.product.images[0]} alt="" className="w-full h-full object-cover" />
+                      <img src={(item.product.images as string[])[0]} alt="" className="w-full h-full object-cover" />
                     </div>
                   ))}
                   {order.orderItems.length > 3 && (

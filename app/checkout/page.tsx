@@ -223,7 +223,7 @@ export default function CheckoutPage() {
                       {group.items.map((item: any) => (
                         <div key={item.id} className="flex gap-3">
                           <div className="w-12 h-12 bg-gray-50 rounded-lg shrink-0 overflow-hidden border border-gray-100">
-                             <img src={item.product.images[0]} alt="" className="w-full h-full object-cover"/>
+                             <img src={(item.product.images as string[])[0]} alt="" className="w-full h-full object-cover"/>
                           </div>
                           <div className="flex-1 min-w-0">
                             <p className="text-xs font-medium text-gray-800 line-clamp-1">{item.product.name}</p>

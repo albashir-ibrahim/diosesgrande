@@ -85,17 +85,17 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           {/* Images */}
           <div className="md:w-2/5">
             <div className="aspect-square bg-gray-50 rounded-xl overflow-hidden mb-3">
-              {product.images[0] ? (
-                <img src={product.images[0]} alt={product.name} className="w-full h-full object-cover" />
+              {(product.images as string[])[0] ? (
+                <img src={(product.images as string[])[0]} alt={product.name} className="w-full h-full object-cover" />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-gray-300">
                   <svg className="w-24 h-24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                 </div>
               )}
             </div>
-            {product.images.length > 1 && (
+            {Array.isArray(product.images) && product.images.length > 1 && (
               <div className="flex gap-2 overflow-x-auto">
-                {product.images.map((img, i) => (
+                {(product.images as string[]).map((img, i) => (
                   <div key={i} className="w-16 h-16 rounded-lg overflow-hidden border-2 border-[#0b8241] shrink-0">
                     <img src={img} alt="" className="w-full h-full object-cover" />
                   </div>

@@ -102,7 +102,7 @@ export default function VendorOrderDetailPage({ params }: { params: Promise<{ id
               {order.orderItems.map((item: any) => (
                 <div key={item.id} className="p-6 flex gap-4">
                   <div className="w-16 h-16 rounded-xl bg-gray-50 overflow-hidden border border-gray-100 shrink-0">
-                    <img src={item.product.images[0]} alt="" className="w-full h-full object-cover" />
+                    <img src={(item.product.images as string[])[0]} alt="" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1">
                     <p className="text-sm font-bold text-gray-800">{item.product.name}</p>

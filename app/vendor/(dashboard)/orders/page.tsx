@@ -146,4 +146,3 @@ function QuickStat({ label, value, color }: { label: string; value: number; colo
     </div>
   );
 }
-}

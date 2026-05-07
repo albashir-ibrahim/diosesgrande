@@ -8,7 +8,7 @@ interface Product {
   id: string;
   name: string;
   price: number;
-  images: string[];
+  images: any;
   stock: number;
   vendor: { id: string; name: string; slug?: string | null };
   category: { id: string; name: string };

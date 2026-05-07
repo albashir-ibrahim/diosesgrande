@@ -39,7 +39,7 @@ export default async function AdminProductsPage() {
                 <td className="px-8 py-5">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-slate-50 overflow-hidden shrink-0 border border-slate-100">
-                       <img src={product.images[0]} className="w-full h-full object-cover" />
+                       <img src={Array.isArray(product.images) ? product.images[0] : (typeof product.images === 'string' ? JSON.parse(product.images)[0] : "/logo.png")} className="w-full h-full object-cover" />
                     </div>
                     <div>
                       <p className="font-bold text-slate-900 line-clamp-1">{product.name}</p>
