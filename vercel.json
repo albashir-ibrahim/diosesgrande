@@ -2,8 +2,8 @@
   "buildCommand": "next build",
   "outputDirectory": ".next",
   "env": {
-    "NEXTAUTH_SECRET": "@nextauth_secret",
     "DATABASE_URL": "@database_url",
+    "AUTH_SECRET": "@auth_secret",
     "NEXTAUTH_URL": "@nextauth_url"
   }
 }
